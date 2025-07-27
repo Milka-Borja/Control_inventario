@@ -3,8 +3,8 @@
 #include <QFile>
 #include <QTextStream>
 #include <QMessageBox>
+#include <QFileDialog>
 
-// Aquí va la estructura que te falta
 struct Producto {
     QString codigo;
     QString nombre;
@@ -43,7 +43,12 @@ void MainWindow::on_Boton_guardar_clicked()
         return;
     }
 
-    QFile archivo("productos.txt");
+    QString rutaArchivo = QFileDialog::getSaveFileName(this, "Guardar producto", "", "Archivos de texto (*.txt)");
+    if (rutaArchivo.isEmpty()) {
+        return;
+    }
+
+    QFile archivo(rutaArchivo);
     if (!archivo.open(QIODevice::Append | QIODevice::Text)) {
         QMessageBox::critical(this, "Error", "No se pudo abrir el archivo");
         return;
@@ -53,10 +58,13 @@ void MainWindow::on_Boton_guardar_clicked()
     out << p.toLine();
     archivo.close();
 
-    QMessageBox::information(this, "Guardado", "Producto guardado");
+    QMessageBox::information(this, "Guardado", "Producto guardado correctamente");
+
     ui->Codigo->clear();
     ui->Nombre->clear();
     ui->Precio->clear();
     ui->Categoria->setCurrentIndex(0);
     ui->Stock->setCurrentIndex(0);
 }
+
+

@@ -66,5 +66,27 @@ void MainWindow::on_Boton_guardar_clicked()
     ui->Categoria->setCurrentIndex(0);
     ui->Stock->setCurrentIndex(0);
 }
+void MainWindow::on_Boton_mostrar_clicked()
+{
+    QString rutaArchivo = QFileDialog::getOpenFileName(this, "Abrir archivo", "", "Archivos de texto (*.txt)");
+    if (rutaArchivo.isEmpty()) {
+        return;
+    }
+
+    QFile archivo(rutaArchivo);
+    if (!archivo.open(QIODevice::ReadOnly | QIODevice::Text)) {
+        QMessageBox::critical(this, "Error", "No se pudo abrir");
+        return;
+    }
+
+    QTextStream in(&archivo);
+    QString contenido = in.readAll();
+    archivo.close();
+
+    ui->mostrar_produ->setPlainText(contenido);
+}
+
+
+
 
 

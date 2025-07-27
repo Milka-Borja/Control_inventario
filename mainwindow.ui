@@ -267,6 +267,16 @@
      <string>TECHNOLOGY STORE</string>
     </property>
    </widget>
+   <widget class="QTextEdit" name="mostrar_produ">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>220</y>
+      <width>631</width>
+      <height>261</height>
+     </rect>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">

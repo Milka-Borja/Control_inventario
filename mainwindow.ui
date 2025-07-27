@@ -14,7 +14,7 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QLineEdit" name="lineEdit">
+   <widget class="QLineEdit" name="Codigo">
     <property name="geometry">
      <rect>
       <x>180</x>
@@ -50,7 +50,7 @@
      <string>Nombre del producto:</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="lineEdit_2">
+   <widget class="QLineEdit" name="Nombre">
     <property name="geometry">
      <rect>
       <x>490</x>
@@ -73,7 +73,7 @@
      <string>Categoria:</string>
     </property>
    </widget>
-   <widget class="QComboBox" name="comboBox">
+   <widget class="QComboBox" name="Categoria">
     <property name="geometry">
      <rect>
       <x>130</x>
@@ -133,7 +133,7 @@
      </property>
     </item>
    </widget>
-   <widget class="QLineEdit" name="lineEdit_3">
+   <widget class="QLineEdit" name="Precio">
     <property name="geometry">
      <rect>
       <x>390</x>
@@ -169,7 +169,7 @@
      <string>Stock: </string>
     </property>
    </widget>
-   <widget class="QComboBox" name="comboBox_2">
+   <widget class="QComboBox" name="Stock">
     <property name="geometry">
      <rect>
       <x>580</x>
@@ -189,7 +189,7 @@
      </property>
     </item>
    </widget>
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="Boton_crear">
     <property name="geometry">
      <rect>
       <x>70</x>
@@ -202,7 +202,7 @@
      <string>Crear ➕</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_2">
+   <widget class="QPushButton" name="Boton_actualizar">
     <property name="geometry">
      <rect>
       <x>230</x>
@@ -215,7 +215,7 @@
      <string>Actualizar ✏️</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_3">
+   <widget class="QPushButton" name="Boton_mostrar">
     <property name="geometry">
      <rect>
       <x>410</x>
@@ -228,7 +228,7 @@
      <string>Mostrar 👀</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_4">
+   <widget class="QPushButton" name="Boton_eliminar">
     <property name="geometry">
      <rect>
       <x>580</x>
@@ -241,7 +241,7 @@
      <string>Eliminar 🗑️</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_5">
+   <widget class="QPushButton" name="Boton_guardar">
     <property name="geometry">
      <rect>
       <x>700</x>

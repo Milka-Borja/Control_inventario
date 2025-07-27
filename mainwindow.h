@@ -28,6 +28,7 @@ public:
 
 private slots:
     void on_Boton_guardar_clicked();
+    void on_Boton_mostrar_clicked();
 
 private:
     Ui::MainWindow *ui;

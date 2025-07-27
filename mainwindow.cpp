@@ -66,6 +66,7 @@ void MainWindow::on_Boton_guardar_clicked()
     ui->Categoria->setCurrentIndex(0);
     ui->Stock->setCurrentIndex(0);
 }
+
 void MainWindow::on_Boton_mostrar_clicked()
 {
     QString rutaArchivo = QFileDialog::getOpenFileName(this, "Abrir archivo", "", "Archivos de texto (*.txt)");
@@ -86,7 +87,14 @@ void MainWindow::on_Boton_mostrar_clicked()
     ui->mostrar_produ->setPlainText(contenido);
 }
 
-
-
-
+void MainWindow::on_pushButton_login_clicked()
+{
+    QString Usuario = ui->lineEdit_usuario->text();
+    QString Contraseña = ui->lineEdit_2_clave->text();
+    if (Usuario == "admin" && Contraseña == "12345"){
+        ui->statusbar->showMessage("Usuario y contraseña correctos", 6000);
+    } else {
+        ui->statusbar->showMessage("Usuario y contraseña incorrectos", 6000);
+    }
+}
 

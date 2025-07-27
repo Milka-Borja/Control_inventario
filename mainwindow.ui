@@ -279,15 +279,45 @@
       <string>TECHNOLOGY STORE</string>
      </property>
     </widget>
-    <widget class="QTextEdit" name="mostrar_produ">
+    <widget class="QTableWidget" name="tabla_productos">
      <property name="geometry">
       <rect>
-       <x>70</x>
-       <y>240</y>
-       <width>631</width>
-       <height>261</height>
+       <x>40</x>
+       <y>220</y>
+       <width>661</width>
+       <height>221</height>
       </rect>
      </property>
+     <column>
+      <property name="text">
+       <string>Codigo</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Nombre</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Categoria</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Precio</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Stock</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string/>
+      </property>
+     </column>
     </widget>
    </widget>
    <widget class="QGroupBox" name="groupBox">

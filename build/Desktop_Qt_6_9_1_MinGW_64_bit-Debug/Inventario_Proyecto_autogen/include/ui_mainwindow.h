@@ -14,13 +14,14 @@
 #include <QtWidgets/QComboBox>
 #include <QtWidgets/QGroupBox>
 #include <QtWidgets/QHBoxLayout>
+#include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
-#include <QtWidgets/QTextEdit>
+#include <QtWidgets/QTableWidget>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
@@ -47,7 +48,7 @@ public:
     QLabel *label_4;
     QLabel *label_5;
     QLabel *label_6;
-    QTextEdit *mostrar_produ;
+    QTableWidget *tabla_productos;
     QGroupBox *groupBox;
     QWidget *layoutWidget;
     QVBoxLayout *verticalLayout;
@@ -131,9 +132,23 @@ public:
         label_6 = new QLabel(groupBox_2);
         label_6->setObjectName("label_6");
         label_6->setGeometry(QRect(10, 30, 201, 16));
-        mostrar_produ = new QTextEdit(groupBox_2);
-        mostrar_produ->setObjectName("mostrar_produ");
-        mostrar_produ->setGeometry(QRect(70, 240, 631, 261));
+        tabla_productos = new QTableWidget(groupBox_2);
+        if (tabla_productos->columnCount() < 6)
+            tabla_productos->setColumnCount(6);
+        QTableWidgetItem *__qtablewidgetitem = new QTableWidgetItem();
+        tabla_productos->setHorizontalHeaderItem(0, __qtablewidgetitem);
+        QTableWidgetItem *__qtablewidgetitem1 = new QTableWidgetItem();
+        tabla_productos->setHorizontalHeaderItem(1, __qtablewidgetitem1);
+        QTableWidgetItem *__qtablewidgetitem2 = new QTableWidgetItem();
+        tabla_productos->setHorizontalHeaderItem(2, __qtablewidgetitem2);
+        QTableWidgetItem *__qtablewidgetitem3 = new QTableWidgetItem();
+        tabla_productos->setHorizontalHeaderItem(3, __qtablewidgetitem3);
+        QTableWidgetItem *__qtablewidgetitem4 = new QTableWidgetItem();
+        tabla_productos->setHorizontalHeaderItem(4, __qtablewidgetitem4);
+        QTableWidgetItem *__qtablewidgetitem5 = new QTableWidgetItem();
+        tabla_productos->setHorizontalHeaderItem(5, __qtablewidgetitem5);
+        tabla_productos->setObjectName("tabla_productos");
+        tabla_productos->setGeometry(QRect(40, 220, 661, 221));
         groupBox = new QGroupBox(centralwidget);
         groupBox->setObjectName("groupBox");
         groupBox->setGeometry(QRect(230, 330, 341, 231));
@@ -222,6 +237,16 @@ public:
         label_4->setText(QCoreApplication::translate("MainWindow", "Precio:", nullptr));
         label_5->setText(QCoreApplication::translate("MainWindow", "Stock: ", nullptr));
         label_6->setText(QCoreApplication::translate("MainWindow", "TECHNOLOGY STORE", nullptr));
+        QTableWidgetItem *___qtablewidgetitem = tabla_productos->horizontalHeaderItem(0);
+        ___qtablewidgetitem->setText(QCoreApplication::translate("MainWindow", "Codigo", nullptr));
+        QTableWidgetItem *___qtablewidgetitem1 = tabla_productos->horizontalHeaderItem(1);
+        ___qtablewidgetitem1->setText(QCoreApplication::translate("MainWindow", "Nombre", nullptr));
+        QTableWidgetItem *___qtablewidgetitem2 = tabla_productos->horizontalHeaderItem(2);
+        ___qtablewidgetitem2->setText(QCoreApplication::translate("MainWindow", "Categoria", nullptr));
+        QTableWidgetItem *___qtablewidgetitem3 = tabla_productos->horizontalHeaderItem(3);
+        ___qtablewidgetitem3->setText(QCoreApplication::translate("MainWindow", "Precio", nullptr));
+        QTableWidgetItem *___qtablewidgetitem4 = tabla_productos->horizontalHeaderItem(4);
+        ___qtablewidgetitem4->setText(QCoreApplication::translate("MainWindow", "Stock", nullptr));
         groupBox->setTitle(QCoreApplication::translate("MainWindow", "SignIn", nullptr));
         label_7->setText(QCoreApplication::translate("MainWindow", "Usuario", nullptr));
         label_8->setText(QCoreApplication::translate("MainWindow", "Contrase\303\261a", nullptr));

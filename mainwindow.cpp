@@ -22,6 +22,9 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
+    ui->groupBox_2->hide(); // Ocultar CRUD al iniciar
+    ui->groupBox->show();    // Mostrar login
 }
 
 MainWindow::~MainWindow()
@@ -93,8 +96,13 @@ void MainWindow::on_pushButton_login_clicked()
     QString Contraseña = ui->lineEdit_2_clave->text();
     if (Usuario == "admin" && Contraseña == "12345"){
         ui->statusbar->showMessage("Usuario y contraseña correctos", 6000);
+        ui->groupBox->hide();
+        ui->groupBox_2->show();
     } else {
         ui->statusbar->showMessage("Usuario y contraseña incorrectos", 6000);
     }
 }
+
+
+
 

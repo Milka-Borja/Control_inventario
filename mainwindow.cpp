@@ -4,7 +4,6 @@
 #include <QTextStream>
 #include <QMessageBox>
 #include <QFileDialog>
-
 struct Producto {
     QString codigo;
     QString nombre;

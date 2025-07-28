@@ -94,9 +94,42 @@ void MainWindow::on_pushButton_login_clicked()
 }
 
 
+void MainWindow::on_Boton_eliminar_clicked()
+{
+    int filaSeleccionada = ui->tabla_productos->currentRow();
+    if (filaSeleccionada == -1) {
+        QMessageBox::warning(this, "Advertencia", "Seleccione un producto para eliminar.");
+        return;
+    }
+    ui->tabla_productos->removeRow(filaSeleccionada);
+}
 
 
+void MainWindow::on_Boton_actualizar_clicked()
+{
+    int filaSeleccionada = ui->tabla_productos->currentRow();
+    if (filaSeleccionada == -1) {
+        QMessageBox::warning(this, "Advertencia", "Seleccione un producto para actualizar.");
+        return;
+    }
 
+    // Obtener nuevos datos
+    QString nuevoCodigo = ui->Codigo->text();
+    QString nuevoNombre = ui->Nombre->text();
+    QString nuevaCategoria = ui->Categoria->currentText();
+    QString nuevoPrecio = ui->Precio->text();
+    QString nuevoStock = ui->Stock->currentText();
 
+    // Actualizar la fila seleccionada
+    ui->tabla_productos->item(filaSeleccionada, 0)->setText(nuevoCodigo);
+    ui->tabla_productos->item(filaSeleccionada, 1)->setText(nuevoNombre);
+    ui->tabla_productos->item(filaSeleccionada, 2)->setText(nuevaCategoria);
+    ui->tabla_productos->item(filaSeleccionada, 3)->setText(nuevoPrecio);
+    ui->tabla_productos->item(filaSeleccionada, 4)->setText(nuevoStock);
 
+    // Limpiar campos
+    ui->Codigo->clear();
+    ui->Nombre->clear();
+    ui->Precio->clear();
+}
 

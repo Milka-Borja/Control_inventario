@@ -32,9 +32,14 @@ private slots:
     void on_Boton_guardar_clicked();
     void on_Boton_mostrar_clicked();
     void on_pushButton_login_clicked();
+    void on_Boton_eliminar_clicked();
+
+    void on_Boton_actualizar_clicked();
 
 private:
     Ui::MainWindow *ui;
+    void cargarDatosTabla(const QList<QStringList> &productos);
+    void limpiarCampos();
 };
 
 #endif // MAINWINDOW_H

@@ -1,5 +1,5 @@
-C:/Users/milk4/Documentos/Inventario_Proyecto/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/Inventario_Proyecto_autogen/EWIEGA46WW/moc_mainwindow.cpp: C:/Users/milk4/Documentos/Inventario_Proyecto/mainwindow.h \
-  C:/Users/milk4/Documentos/Inventario_Proyecto/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/Inventario_Proyecto_autogen/moc_predefs.h \
+C:/Users/Vergil-Sebas/Documents/Segundo/Progra/proyect/proyect/Proyecto_Qt/Control_inventario/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/Inventario_Proyecto_autogen/EWIEGA46WW/moc_mainwindow.cpp: C:/Users/Vergil-Sebas/Documents/Segundo/Progra/proyect/proyect/Proyecto_Qt/Control_inventario/mainwindow.h \
+  C:/Users/Vergil-Sebas/Documents/Segundo/Progra/proyect/proyect/Proyecto_Qt/Control_inventario/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/Inventario_Proyecto_autogen/moc_predefs.h \
   C:/Qt/6.9.1/mingw_64/include/QtCore/q17memory.h \
   C:/Qt/6.9.1/mingw_64/include/QtCore/q20functional.h \
   C:/Qt/6.9.1/mingw_64/include/QtCore/q20iterator.h \

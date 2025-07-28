@@ -1,2 +1,0 @@
-1|as|Accesorios|12|Disponible
-||Periféricos||Disponible

@@ -71,7 +71,7 @@ public:
         centralwidget->setObjectName("centralwidget");
         groupBox_2 = new QGroupBox(centralwidget);
         groupBox_2->setObjectName("groupBox_2");
-        groupBox_2->setGeometry(QRect(0, 0, 791, 541));
+        groupBox_2->setGeometry(QRect(0, 140, 791, 541));
         Boton_actualizar = new QPushButton(groupBox_2);
         Boton_actualizar->setObjectName("Boton_actualizar");
         Boton_actualizar->setGeometry(QRect(240, 170, 101, 24));
@@ -151,7 +151,7 @@ public:
         tabla_productos->setGeometry(QRect(40, 220, 661, 221));
         groupBox = new QGroupBox(centralwidget);
         groupBox->setObjectName("groupBox");
-        groupBox->setGeometry(QRect(200, 540, 341, 231));
+        groupBox->setGeometry(QRect(200, 30, 341, 231));
         layoutWidget = new QWidget(groupBox);
         layoutWidget->setObjectName("layoutWidget");
         layoutWidget->setGeometry(QRect(70, 50, 211, 131));
@@ -197,7 +197,7 @@ public:
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 800, 21));
+        menubar->setGeometry(QRect(0, 0, 800, 22));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName("statusbar");

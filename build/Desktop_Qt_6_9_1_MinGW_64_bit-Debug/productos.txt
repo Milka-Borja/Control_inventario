@@ -1,0 +1,7 @@
+1|as|Accesorios|12|Disponible
+||Periféricos||Disponible
+||Domótica||Agotado
+||Domótica||Agotado
+||Accesorios||Disponible
+2||Periféricos||Disponible
+||Componentes PC||Disponible

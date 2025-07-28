@@ -132,5 +132,3 @@ void MainWindow::on_Boton_actualizar_clicked()
     ui->Nombre->clear();
     ui->Precio->clear();
 }
-
-// comentario de prueba

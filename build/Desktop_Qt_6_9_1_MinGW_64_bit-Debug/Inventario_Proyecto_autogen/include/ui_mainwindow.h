@@ -151,7 +151,7 @@ public:
         tabla_productos->setGeometry(QRect(40, 220, 661, 221));
         groupBox = new QGroupBox(centralwidget);
         groupBox->setObjectName("groupBox");
-        groupBox->setGeometry(QRect(200, 30, 341, 231));
+        groupBox->setGeometry(QRect(230, 10, 341, 231));
         layoutWidget = new QWidget(groupBox);
         layoutWidget->setObjectName("layoutWidget");
         layoutWidget->setGeometry(QRect(70, 50, 211, 131));

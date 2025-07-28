@@ -127,6 +127,7 @@ void MainWindow::on_Boton_actualizar_clicked()
     ui->tabla_productos->item(filaSeleccionada, 3)->setText(nuevoPrecio);
     ui->tabla_productos->item(filaSeleccionada, 4)->setText(nuevoStock);
 
+
     ui->Codigo->clear();
     ui->Nombre->clear();
     ui->Precio->clear();

@@ -101,9 +101,29 @@ void MainWindow::on_Boton_eliminar_clicked()
         QMessageBox::warning(this, "Advertencia", "Seleccione un producto para eliminar.");
         return;
     }
-    ui->tabla_productos->removeRow(filaSeleccionada);
-}
+    //ui->tabla_productos->removeRow(filaSeleccionada);
+    QString codigo = ui->tabla_productos->item(filaSeleccionada, 0)->text();
+    QString nombre = ui->tabla_productos->item(filaSeleccionada, 1)->text();
 
+    // Confirmación de eliminación
+    QMessageBox::StandardButton respuesta = QMessageBox::question(this,
+        "Confirmar eliminación",
+        QString("¿Está seguro de que desea eliminar el siguiente producto?\n\n"
+                "Código: %1\n"
+                "Nombre: %2\n\n"
+                "Esta acción no se puede deshacer.")
+            .arg(codigo)
+            .arg(nombre),
+        QMessageBox::Yes | QMessageBox::No,
+        QMessageBox::No  // Botón por defecto
+        );
+
+    if (respuesta == QMessageBox::Yes) {
+        // Eliminar fila
+        ui->tabla_productos->removeRow(filaSeleccionada);
+        QMessageBox::information(this, "Éxito", "Producto eliminado correctamente.");
+    }
+}
 
 void MainWindow::on_Boton_actualizar_clicked()
 {
@@ -112,24 +132,29 @@ void MainWindow::on_Boton_actualizar_clicked()
         QMessageBox::warning(this, "Advertencia", "Seleccione un producto para actualizar.");
         return;
     }
-
-
+    // Obtener nuevos datos
     QString nuevoCodigo = ui->Codigo->text();
     QString nuevoNombre = ui->Nombre->text();
     QString nuevaCategoria = ui->Categoria->currentText();
     QString nuevoPrecio = ui->Precio->text();
     QString nuevoStock = ui->Stock->currentText();
-
-
+    // Validar campos no vacíos
+    if (nuevoCodigo.isEmpty() || nuevoNombre.isEmpty() || nuevoPrecio.isEmpty()) {
+        QMessageBox::warning(this, "Advertencia", "Por favor, complete todos los campos.");
+        return;
+    }
+    // Actualizar la fila seleccionada
     ui->tabla_productos->item(filaSeleccionada, 0)->setText(nuevoCodigo);
     ui->tabla_productos->item(filaSeleccionada, 1)->setText(nuevoNombre);
     ui->tabla_productos->item(filaSeleccionada, 2)->setText(nuevaCategoria);
     ui->tabla_productos->item(filaSeleccionada, 3)->setText(nuevoPrecio);
     ui->tabla_productos->item(filaSeleccionada, 4)->setText(nuevoStock);
 
-
+    // Limpiar campos
     ui->Codigo->clear();
     ui->Nombre->clear();
     ui->Precio->clear();
+    QMessageBox::information(this, "Éxito", "Producto actualizado correctamente.");
 }
+
 

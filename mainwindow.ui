@@ -14,258 +14,375 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QLineEdit" name="Codigo">
+   <widget class="QGroupBox" name="groupBox_2">
     <property name="geometry">
      <rect>
-      <x>180</x>
-      <y>60</y>
-      <width>113</width>
-      <height>22</height>
+      <x>0</x>
+      <y>-10</y>
+      <width>791</width>
+      <height>541</height>
      </rect>
     </property>
+    <property name="title">
+     <string>GroupBox</string>
+    </property>
+    <widget class="QPushButton" name="Boton_actualizar">
+     <property name="geometry">
+      <rect>
+       <x>240</x>
+       <y>170</y>
+       <width>101</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Actualizar ✏️</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="Boton_buscar">
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>170</y>
+       <width>91</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Buscar 🔍</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="Boton_eliminar">
+     <property name="geometry">
+      <rect>
+       <x>560</x>
+       <y>170</y>
+       <width>101</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Eliminar 🗑️</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="Boton_guardar">
+     <property name="geometry">
+      <rect>
+       <x>680</x>
+       <y>70</y>
+       <width>81</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Guardar 📁</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="Boton_mostrar">
+     <property name="geometry">
+      <rect>
+       <x>400</x>
+       <y>170</y>
+       <width>101</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Mostrar 👀</string>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="Categoria">
+     <property name="geometry">
+      <rect>
+       <x>120</x>
+       <y>120</y>
+       <width>141</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <item>
+      <property name="text">
+       <string>Periféricos</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Componentes PC</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Accesorios</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Monitores</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Equipos</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Redes</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Gaming</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Almacenamiento</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Impresión</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Domótica</string>
+      </property>
+     </item>
+    </widget>
+    <widget class="QLineEdit" name="Codigo">
+     <property name="geometry">
+      <rect>
+       <x>170</x>
+       <y>70</y>
+       <width>113</width>
+       <height>22</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="Nombre">
+     <property name="geometry">
+      <rect>
+       <x>470</x>
+       <y>70</y>
+       <width>113</width>
+       <height>22</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="Precio">
+     <property name="geometry">
+      <rect>
+       <x>380</x>
+       <y>120</y>
+       <width>113</width>
+       <height>22</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="Stock">
+     <property name="geometry">
+      <rect>
+       <x>580</x>
+       <y>120</y>
+       <width>69</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <item>
+      <property name="text">
+       <string>Disponible</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Agotado</string>
+      </property>
+     </item>
+    </widget>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>70</y>
+       <width>131</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Codigo del producto: </string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_2">
+     <property name="geometry">
+      <rect>
+       <x>320</x>
+       <y>70</y>
+       <width>131</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Nombre del producto:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_3">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>120</y>
+       <width>61</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Categoria:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_4">
+     <property name="geometry">
+      <rect>
+       <x>320</x>
+       <y>120</y>
+       <width>49</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Precio:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_5">
+     <property name="geometry">
+      <rect>
+       <x>520</x>
+       <y>120</y>
+       <width>49</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Stock: </string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_6">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>201</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>TECHNOLOGY STORE</string>
+     </property>
+    </widget>
+    <widget class="QTableWidget" name="tabla_productos">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>220</y>
+       <width>661</width>
+       <height>221</height>
+      </rect>
+     </property>
+     <column>
+      <property name="text">
+       <string>Codigo</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Nombre</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Categoria</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Precio</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Stock</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string/>
+      </property>
+     </column>
+    </widget>
    </widget>
-   <widget class="QLabel" name="label">
-    <property name="geometry">
-     <rect>
-      <x>50</x>
-      <y>60</y>
-      <width>131</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Codigo del producto: </string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_2">
-    <property name="geometry">
-     <rect>
-      <x>340</x>
-      <y>60</y>
-      <width>131</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Nombre del producto:</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="Nombre">
-    <property name="geometry">
-     <rect>
-      <x>490</x>
-      <y>60</y>
-      <width>113</width>
-      <height>22</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_3">
-    <property name="geometry">
-     <rect>
-      <x>50</x>
-      <y>110</y>
-      <width>61</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Categoria:</string>
-    </property>
-   </widget>
-   <widget class="QComboBox" name="Categoria">
-    <property name="geometry">
-     <rect>
-      <x>130</x>
-      <y>110</y>
-      <width>141</width>
-      <height>22</height>
-     </rect>
-    </property>
-    <item>
-     <property name="text">
-      <string>Periféricos</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Componentes PC</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Accesorios</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Monitores</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Equipos</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Redes</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Gaming</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Almacenamiento</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Impresión</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Domótica</string>
-     </property>
-    </item>
-   </widget>
-   <widget class="QLineEdit" name="Precio">
-    <property name="geometry">
-     <rect>
-      <x>390</x>
-      <y>110</y>
-      <width>113</width>
-      <height>22</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_4">
-    <property name="geometry">
-     <rect>
-      <x>340</x>
-      <y>110</y>
-      <width>49</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Precio:</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_5">
-    <property name="geometry">
-     <rect>
-      <x>530</x>
-      <y>110</y>
-      <width>49</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Stock: </string>
-    </property>
-   </widget>
-   <widget class="QComboBox" name="Stock">
-    <property name="geometry">
-     <rect>
-      <x>580</x>
-      <y>110</y>
-      <width>69</width>
-      <height>22</height>
-     </rect>
-    </property>
-    <item>
-     <property name="text">
-      <string>Disponible</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Agotado</string>
-     </property>
-    </item>
-   </widget>
-   <widget class="QPushButton" name="Boton_crear">
-    <property name="geometry">
-     <rect>
-      <x>70</x>
-      <y>160</y>
-      <width>91</width>
-      <height>24</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Crear ➕</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="Boton_actualizar">
+   <widget class="QGroupBox" name="groupBox">
     <property name="geometry">
      <rect>
       <x>230</x>
-      <y>160</y>
-      <width>101</width>
-      <height>24</height>
+      <y>330</y>
+      <width>341</width>
+      <height>231</height>
      </rect>
     </property>
-    <property name="text">
-     <string>Actualizar ✏️</string>
+    <property name="title">
+     <string>SignIn</string>
     </property>
-   </widget>
-   <widget class="QPushButton" name="Boton_mostrar">
-    <property name="geometry">
-     <rect>
-      <x>410</x>
-      <y>160</y>
-      <width>101</width>
-      <height>24</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Mostrar 👀</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="Boton_eliminar">
-    <property name="geometry">
-     <rect>
-      <x>580</x>
-      <y>160</y>
-      <width>101</width>
-      <height>24</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Eliminar 🗑️</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="Boton_guardar">
-    <property name="geometry">
-     <rect>
-      <x>700</x>
-      <y>100</y>
-      <width>81</width>
-      <height>24</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Guardar 📁</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_6">
-    <property name="geometry">
-     <rect>
-      <x>40</x>
-      <y>20</y>
-      <width>201</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>TECHNOLOGY STORE</string>
-    </property>
+    <widget class="QWidget" name="layoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>50</y>
+       <width>211</width>
+       <height>131</height>
+      </rect>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <widget class="QLabel" name="label_7">
+          <property name="text">
+           <string>Usuario</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="lineEdit_usuario"/>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <item>
+         <widget class="QLabel" name="label_8">
+          <property name="text">
+           <string>Contraseña</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="lineEdit_2_clave">
+          <property name="echoMode">
+           <enum>QLineEdit::EchoMode::Password</enum>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_login">
+        <property name="text">
+         <string>Login</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">

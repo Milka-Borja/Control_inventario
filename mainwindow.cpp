@@ -22,6 +22,9 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
+    ui->groupBox_2->hide(); // Ocultar CRUD al iniciar
+    ui->groupBox->show();    // Mostrar login
 }
 
 MainWindow::~MainWindow()
@@ -31,60 +34,67 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_Boton_guardar_clicked()
 {
-    Producto p;
-    p.codigo = ui->Codigo->text();
-    p.nombre = ui->Nombre->text();
-    p.categoria = ui->Categoria->currentText();
-    p.precio = ui->Precio->text();
-    p.stock = ui->Stock->currentText();
-
-    if (p.codigo.isEmpty() || p.nombre.isEmpty()) {
-        QMessageBox::warning(this, "Error", "El código y nombre son obligatorios");
+    QFile file("productos.txt");
+    if (!file.open(QIODevice::Append | QIODevice::Text)) {
+        QMessageBox::warning(this, "Error", "No se pudo abrir el archivo para guardar.");
         return;
     }
 
-    QString rutaArchivo = QFileDialog::getSaveFileName(this, "Guardar producto", "", "Archivos de texto (*.txt)");
-    if (rutaArchivo.isEmpty()) {
-        return;
-    }
+    QTextStream out(&file);
+    QString codigo = ui->Codigo->text();
+    QString nombre = ui->Nombre->text();
+    QString categoria = ui->Categoria->currentText();
+    QString precio = ui->Precio->text();
+    QString stock = ui->Stock->currentText();
 
-    QFile archivo(rutaArchivo);
-    if (!archivo.open(QIODevice::Append | QIODevice::Text)) {
-        QMessageBox::critical(this, "Error", "No se pudo abrir el archivo");
-        return;
-    }
+    out << codigo << "|" << nombre << "|" << categoria << "|" << precio << "|" << stock << "\n";
+    file.close();
 
-    QTextStream out(&archivo);
-    out << p.toLine();
-    archivo.close();
-
-    QMessageBox::information(this, "Guardado", "Producto guardado correctamente");
-
-    ui->Codigo->clear();
-    ui->Nombre->clear();
-    ui->Precio->clear();
-    ui->Categoria->setCurrentIndex(0);
-    ui->Stock->setCurrentIndex(0);
+    QMessageBox::information(this, "Guardado", "Producto guardado exitosamente.");
 }
+
 void MainWindow::on_Boton_mostrar_clicked()
 {
-    QString rutaArchivo = QFileDialog::getOpenFileName(this, "Abrir archivo", "", "Archivos de texto (*.txt)");
-    if (rutaArchivo.isEmpty()) {
+    QFile file("productos.txt");
+    if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+        QMessageBox::warning(this, "Error", "No se pudo abrir el archivo.");
         return;
     }
 
-    QFile archivo(rutaArchivo);
-    if (!archivo.open(QIODevice::ReadOnly | QIODevice::Text)) {
-        QMessageBox::critical(this, "Error", "No se pudo abrir");
-        return;
+    QTextStream in(&file);
+    ui->tabla_productos->setRowCount(0); // Limpiar tabla
+
+    int row = 0;
+    while (!in.atEnd()) {
+        QString line = in.readLine();
+        QStringList datos = line.split("|");
+        if (datos.size() == 5) {
+            ui->tabla_productos->insertRow(row);
+            for (int col = 0; col < 5; ++col) {
+                ui->tabla_productos->setItem(row, col, new QTableWidgetItem(datos[col].trimmed()));
+            }
+            row++;
+        }
     }
 
-    QTextStream in(&archivo);
-    QString contenido = in.readAll();
-    archivo.close();
-
-    ui->mostrar_produ->setPlainText(contenido);
+    file.close();
 }
+
+void MainWindow::on_pushButton_login_clicked()
+{
+    QString Usuario = ui->lineEdit_usuario->text();
+    QString Contraseña = ui->lineEdit_2_clave->text();
+    if (Usuario == "admin" && Contraseña == "12345"){
+        ui->statusbar->showMessage("Usuario y contraseña correctos", 6000);
+        ui->groupBox->hide();
+        ui->groupBox_2->show();
+    } else {
+        ui->statusbar->showMessage("Usuario y contraseña incorrectos", 6000);
+    }
+}
+
+
+
 
 
 

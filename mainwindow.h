@@ -33,8 +33,8 @@ private slots:
     void on_Boton_mostrar_clicked();
     void on_pushButton_login_clicked();
     void on_Boton_eliminar_clicked();
-
     void on_Boton_actualizar_clicked();
+    void on_Boton_buscar_clicked();
 
 private:
     Ui::MainWindow *ui;

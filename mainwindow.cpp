@@ -4,6 +4,7 @@
 #include <QTextStream>
 #include <QMessageBox>
 #include <QFileDialog>
+#include <QInputDialog>
 struct Producto {
     QString codigo;
     QString nombre;
@@ -130,4 +131,39 @@ void MainWindow::on_Boton_actualizar_clicked()
     ui->Codigo->clear();
     ui->Nombre->clear();
     ui->Precio->clear();
+}
+void MainWindow::on_Boton_buscar_clicked()
+{
+    // Pedir al usuario el código del producto a buscar
+    bool ok;
+    QString codigoBuscado = QInputDialog::getText(this, "Buscar Producto",
+                                                  "Ingrese el código del producto:", QLineEdit::Normal,
+                                                  "", &ok);
+
+    if (ok && !codigoBuscado.isEmpty()) {
+        bool encontrado = false;
+        // Recorrer todas las filas de la tabla
+        for (int i = 0; i < ui->tabla_productos->rowCount(); ++i) {
+            QTableWidgetItem *item = ui->tabla_productos->item(i, 0); // La columna 0 es el código
+            if (item && item->text() == codigoBuscado) {
+                // Si se encuentra, seleccionar la fila y asegurarse de que sea visible
+                ui->tabla_productos->selectRow(i);
+                ui->tabla_productos->scrollToItem(item, QAbstractItemView::EnsureVisible);
+                encontrado = true;
+
+                // Opcional: Cargar los datos en los campos de edición
+                ui->Codigo->setText(ui->tabla_productos->item(i, 0)->text());
+                ui->Nombre->setText(ui->tabla_productos->item(i, 1)->text());
+                ui->Categoria->setCurrentText(ui->tabla_productos->item(i, 2)->text());
+                ui->Precio->setText(ui->tabla_productos->item(i, 3)->text());
+                ui->Stock->setCurrentText(ui->tabla_productos->item(i, 4)->text());
+
+                break; // Terminar el bucle una vez que se encuentra el producto
+            }
+        }
+
+        if (!encontrado) {
+            QMessageBox::information(this, "No encontrado", "No se encontró ningún producto con ese código.");
+        }
+    }
 }
